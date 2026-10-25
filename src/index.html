@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <link rel="stylesheet" href="style.css" />
-  <!--carregar arquivo css-->
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--ajuste de tela em smartphones-->
-    <title>PokeApi</title>
-    <!--titulo da aba da pagina-->
-  </head>
-  <body>
-    <div class="pageContent">
-      <h2 id="name">Nome do Pokemon</h2>
-      <img
-        id="img_sprite_front_default"
-        src="../assets/missingno.png"
-        alt="Imagem do Pokemon"
-      />
-      <div>
-        <button id="previous" onclick="previousPokemon()">Anterior</button>
-        <button id="next" onclick="nextPokemon()">Proximo</button>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pokedex">
+    <header class="pokedex__top">
+      <span class="luz luz--grande"></span>
+      <span class="luz luz--vermelha"></span>
+      <span class="luz luz--amarela"></span>
+      <span class="luz luz--verde"></span>
+    </header>
+
+    <section class="tela">
+      <p class="tela__numero" id="numero">#---</p>
+      <div class="tela__imagem">
+        <img id="imagem" src="" alt="Imagem do Pokémon">
+        <p class="tela__status" id="status">Carregando...</p>
       </div>
-    </div>
-  </body>
-  <script src="script.js" type="text/javascript"></script>
-  <!--carregar arquivo js-->
+      <h1 class="tela__nome" id="nome">---</h1>
+      <div class="tipos" id="tipos"></div>
+      <div class="info">
+        <div><span>Altura</span><strong id="altura">-</strong></div>
+        <div><span>Peso</span><strong id="peso">-</strong></div>
+      </div>
+    </section>
+
+    <form class="busca" id="busca">
+      <input type="text" id="campoBusca" placeholder="Nome ou número" autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <nav class="botoes">
+      <button id="anterior">&lt; Anterior</button>
+      <button id="proximo">Próximo &gt;</button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
